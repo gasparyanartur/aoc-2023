@@ -28,7 +28,7 @@ def find_first_digit_with_word_left(line: Iterable[str]) -> str:
 
         for word_len in range(5, 2, -1):
             if i >= word_len - 1:
-                word = line[i - (word_len - 1): i + 1]
+                word = line[i - (word_len - 1) : i + 1]
                 digit = word_to_digit.get(word)
                 if digit:
                     return digit
@@ -47,14 +47,6 @@ def find_first_digit_with_word_right(line: Iterable[str]) -> str:
                 digit = word_to_digit.get(word)
                 if digit:
                     return digit
-
-
-def main(problem, input_path):
-    if problem == "p1":
-        problem_1(input_path)
-
-    elif problem == "p2":
-        problem_2(input_path)
 
 
 def problem_1(input_path):
@@ -80,6 +72,13 @@ def problem_2(input_path):
 
     print(cum_sum)
 
+
+def main(problem, input_path):
+    if problem == "p1":
+        problem_1(input_path)
+
+    elif problem == "p2":
+        problem_2(input_path)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
